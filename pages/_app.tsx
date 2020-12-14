@@ -8,6 +8,7 @@ Sentry.init({
   dsn: process.env.NEXT_PUBLIC_SENTRY_DNS,
   integrations: [new Integrations.BrowserTracing()],
   tracesSampleRate: 1.0,
+  release: "1,0",
 });
 
 const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
