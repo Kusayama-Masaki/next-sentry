@@ -14,8 +14,19 @@ const Home: FC = () => (
         quibusdam exercitationem, deleniti modi impedit numquam. Laudantium,
         ratione tempora doloribus blanditiis sed consectetur.
       </p>
+      <button onClick={throwException}>throw exception</button>
     </main>
   </div>
 );
+
+const throwException = () => {
+  const rand = Math.random();
+  try {
+    console.log(rand);
+    if (rand < 0.5) throw new Error("exception test");
+  } catch (err) {
+    console.error(rand);
+  }
+};
 
 export default Home;
